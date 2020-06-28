@@ -70,7 +70,7 @@ body {
 #scan_barcode {
     margin: 60px 0 20px 40px;
 }
-#search_by_phone {
+.search_by {
     margin: 0 0 20px 40px;
 }
 .profile_item {
@@ -97,7 +97,19 @@ body {
     }
     #menu_toggle {
         display: block;
-    }
-    
-    
+    }   
+}
+/* FOOTER */
+#footer_container {
+    border-top: solid black 2px;    
+    background-color: #756e6d;
+    color: white;
+    padding-left: 30px;
+}
+.footer_icon {
+    width: 30px;
+    height: 30px;
+}
+#copyright {
+    text-align: center;
 }
