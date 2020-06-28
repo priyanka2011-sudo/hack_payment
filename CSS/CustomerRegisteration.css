@@ -8,7 +8,7 @@
     background-color: white;
   }
   
-  input[type=text]{
+  input[type=text],[type=email],[type=tel]{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
