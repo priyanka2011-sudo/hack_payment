@@ -82,6 +82,10 @@ button
     {
       margin-top: 0;
     }
+    #txt
+    {
+      margin-left: 13px;
+    }
   }
   
 /* TOGGLE SWITCH */
