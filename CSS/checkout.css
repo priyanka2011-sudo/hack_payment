@@ -85,7 +85,6 @@ body {
     cursor: pointer;
   }
 
-
   input[type=submit]:hover {
     background-color: #0bb082;
     opacity: .9;
