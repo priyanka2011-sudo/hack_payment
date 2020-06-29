@@ -1,13 +1,18 @@
 <?php include "header.php"; 
 $link = $_SESSION['connection'];
 
+
 //Business Type dropdown
-    $bus_type_option = "";
+    $BusinessTypeID = $bus_type_option = "";
     $bus_type_query = "select * from businesstype";
     $bus_exec       = mysqli_query($link,$bus_type_query);
     while ($row = mysqli_fetch_assoc($bus_exec)){
-
-        $bus_type_option.= "<option value=".$row['TypeID'].">".$row['TypeName']."</option>";
+        if($row['TypeID'] = $BusinessTypeID){
+            $bus_type_option.= "<option value=".$row['TypeID'].">".$row['TypeName']."</option>";
+        }
+        else{
+            $bus_type_option.= "<option value=".$row['TypeID'].">".$row['TypeName']." selected </option>";
+        }
         
     }
 

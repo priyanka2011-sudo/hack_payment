@@ -1,4 +1,10 @@
-<?php include "config/dbconnect.php";?>
+<?php include "config/dbconnect.php";
+
+if(!($_SESSION['loginId'])){
+    header('Location: login.php');
+}
+
+?>
 <!DOCTYPE html>
 <title>App</title>
 <head>
@@ -22,6 +28,7 @@
                 <li><a href="CustomerList2.php">Customer</a></li>
                 <li><a href="#FAQ">FAQ</a></li>   
                 <li><a href="#help">Help</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
         

@@ -32,3 +32,11 @@ ALTER TABLE `usertype` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT 
 
 
 INSERT INTO `businesstype` (`TypeID`, `TypeName`, `CreatedAt`, `UpdatedAt`, `DeletedAt`, `IsDeleted`) VALUES (NULL, 'Grocery Store', '2020-06-29 00:00:00', '2020-06-29 00:00:00', NULL, '0'), (NULL, 'Cleaning Services', '2020-06-29 00:00:00', '2020-06-29 00:00:00', NULL, '0');
+
+
+INSERT INTO `usertype` (`UserTypeID`, `UserTypeName`, `CreatedAt`, `UpdatedAt`, `DeletedAt`, `IsDeleted`) VALUES
+(1, 'superadmin', '2020-06-29 18:59:24', NULL, NULL, 0),
+(2, 'business', '2020-06-29 18:59:24', NULL, NULL, 0),
+(3, 'customer', '2020-06-29 19:05:27', NULL, NULL, 0);
+
+INSERT INTO `login` (`loginId`, `UserTypeID`, `UserID`, `UserName`, `Password`, `CreatedAt`, `CreatedBy`, `UpdatedAt`, `UpdateBy`, `DeletedAt`, `DeletedBy`, `IsDeleted`) VALUES (NULL, '2', '1', 'test_user', 'abcd', current_timestamp(), '', NULL, NULL, NULL, NULL, '0');
