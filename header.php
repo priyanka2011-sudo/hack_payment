@@ -14,8 +14,8 @@
         <nav id="nav_bar">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="Transaction.html">Transaction</a></li>
-                <li><a href="CustomerList2.html">Customer</a></li>
+                <li><a href="Transaction.php">Transaction</a></li>
+                <li><a href="CustomerList2.php">Customer</a></li>
                 <li><a href="#FAQ">FAQ</a></li>   
                 <li><a href="#help">Help</a></li>
             </ul>
