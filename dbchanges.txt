@@ -1,0 +1,34 @@
+ALTER TABLE `business` CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+ALTER TABLE `business` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `UpdatedBy` `UpdatedBy` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL, CHANGE `DeletedAt` `DeletedAt` DATETIME NULL;
+
+ALTER TABLE `businesstype` CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `DeletedAt` `DeletedAt` DATETIME NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+ALTER TABLE `customer` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `UpdatedBy` `UpdatedBy` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL, CHANGE `DeletedAt` `DeletedAt` DATETIME NULL, CHANGE `DeletedBy` `DeletedBy` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `invoice` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `UpdatedBy` `UpdatedBy` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL, CHANGE `DeletedAt` `DeletedAt` DATETIME NULL, CHANGE `DeletedBy` `DeletedBy` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL, CHANGE `IsDeleted` `IsDeleted` INT(50) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `invoiceitem` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `login` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `UpdateBy` `UpdateBy` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL, CHANGE `DeletedAt` `DeletedAt` DATETIME NULL, CHANGE `DeletedBy` `DeletedBy` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `merchantaccount` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `payment` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `IsDeleted` `IsDeleted` BOOLEAN NOT NULL DEFAULT FALSE;
+
+
+ALTER TABLE `paymentmethod` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `product` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `usertype` CHANGE `CreatedAt` `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, CHANGE `UpdatedAt` `UpdatedAt` DATETIME NULL, CHANGE `DeletedAt` `DeletedAt` DATETIME NULL, CHANGE `IsDeleted` `IsDeleted` TINYINT(1) NOT NULL DEFAULT '0';
+
+
+INSERT INTO `businesstype` (`TypeID`, `TypeName`, `CreatedAt`, `UpdatedAt`, `DeletedAt`, `IsDeleted`) VALUES (NULL, 'Grocery Store', '2020-06-29 00:00:00', '2020-06-29 00:00:00', NULL, '0'), (NULL, 'Cleaning Services', '2020-06-29 00:00:00', '2020-06-29 00:00:00', NULL, '0');
