@@ -1,4 +1,5 @@
 <?php include "header.php"; ?>
+<style><?php include 'CSS/Invoiceinitiation.css';?></style>
         <form name="form" action="#" onsubmit="return isValid();" method="post">            
         <div class="container">
               
@@ -13,7 +14,7 @@
                 </select>
 
                 <label for="PrName"></label>      
-                <input type="text" placeholder="Quantity" name="PrName" id="PrName">
+                <input type="text" placeholder="Quantity" class="initiation_text" name="PrName" id="PrName">
 
                 <label for="amount"></label>     
                 <input type="text" placeholder="Amount" name="amount" id="PramountName">

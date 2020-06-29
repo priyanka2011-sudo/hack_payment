@@ -114,3 +114,18 @@ body {
 #copyright {
     text-align: center;
 }
+/* OTP */
+header {
+    font-size: 150%;
+    font-weight: 100;
+}
+.OTP {
+    width: 50px;
+    text-align: center;
+    margin-right: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

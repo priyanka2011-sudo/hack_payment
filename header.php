@@ -1,13 +1,15 @@
+<?php include "config/dbconnect.php";?>
 <!DOCTYPE html>
 <title>App</title>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerList2.css">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerRegisteration.css">
-    <link rel="stylesheet" type="text/css" href="CSS/OTPConfirmation.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Invoiceinitiation.css">
     <script src="JS/CustomerList.js"></script>
+    <script src="JS/invoiceinitiation.js"></script>
+    <script src="JS/registration.js"></script>
     <script src="JS/OTPConfirmation.js"></script>
-    <!-- <script src="JS/registration.js"></script> -->
 </head>
 <body>
     <div id="top_bar">
