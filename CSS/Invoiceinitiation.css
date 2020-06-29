@@ -19,6 +19,7 @@
       border: none;
       background: #f1f1f1;
     }
+
     #pr
     {
       margin-right:20px ;
@@ -27,6 +28,10 @@
     .total
     {
       margin-left: 60%;
+    }
+    .search
+    {
+      margin-left: 70%;
     }
 
     #amount
@@ -65,7 +70,11 @@
       margin-left: 20px;
       margin-right: 20px;
     }
-    
+    h1
+    {
+      color: #646464;
+    }
+
     hr {
       border: 1px solid #f1f1f1;
       margin-bottom: 25px;
@@ -108,7 +117,7 @@
         width: 58%;
       }
 
-      .total
+      .total,.search
       {
         width: 100%;
         margin: 0px 0px 0px 0px;
@@ -187,6 +196,3 @@
   {
       width: 35px;
   }
-  
-  
-  
