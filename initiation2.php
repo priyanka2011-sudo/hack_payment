@@ -18,7 +18,7 @@
                 </div>                   
                 <br>    
                 <div class="con">                         
-                    <input type="submit" value="Scan Again"></input>    
+                    <input type="submit" class="scanqr" value="Scan Again"></input>    
                     </div> 
             <hr>  
             <div class="con1">     
