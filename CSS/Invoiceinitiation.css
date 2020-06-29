@@ -61,7 +61,10 @@
     {
       margin-left: 5px;
     }
- 
+   #btn
+  {
+    margin-left: 19px;
+  }
     #txt
     {
       margin-left: 20px;
@@ -103,6 +106,14 @@
       {
         margin-left: 0%;
       }  
+      /* button[type=button]
+      {
+        margin-top: 0;
+      } */
+      #txt
+      {
+        margin-left: 13px;
+      }
       .div
       {        
           margin-top: 10px;

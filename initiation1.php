@@ -1,4 +1,5 @@
 <?php include "header.php"; ?>
+<style><?php include 'CSS/Invoiceinitiation.css';?></style>
         <form name="form" action="#" onsubmit="return isValid();" method="post">            
         <div class="container">
               
@@ -42,7 +43,7 @@
                 <br>               
             <hr>  
             <div class="con"> 
-                <a href="initiation2.html">                        
+                <a href="initiation2.php">                        
             <input type="submit" value="Next"></input></a> 
         </div> 
 <?php include "footer.php"; ?>

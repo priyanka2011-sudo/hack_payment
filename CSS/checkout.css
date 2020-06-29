@@ -47,7 +47,9 @@ body {
 {
   text-align: right;
 }
-
+.con{
+  text-align: left;
+}
   form {
     padding: 16px;
     background-color: white;

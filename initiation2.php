@@ -1,4 +1,5 @@
 <?php include "header.php"; ?>
+<style><?php include 'CSS/checkout.css';?></style>
         <form name="form" action="#" onsubmit="return isValid();" method="post">            
         <div class="container">         
         </div>     
@@ -16,13 +17,12 @@
                     </label>
                 </div>                   
                 <br>    
-                
                 <div class="con">                         
-                    <input type="submit" value="Scan Again"></input>    
+                    <input type="submit" class="scanqr" value="Scan Again"></input>    
                     </div> 
             <hr>  
             <div class="con1">     
-                <a href="initiation3.html">                       
+                <a href="initiation3.php">                       
                 <input type="submit" value="Continue"></input></a>    
                 </div>           
 <?php include "footer.php"; ?>
