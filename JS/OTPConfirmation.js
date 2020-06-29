@@ -12,7 +12,7 @@ function onKeyUpEvent(index, event) {
         // Submit code
         if(!otp) {
             for(let i = 1; i <= 4; i++) {
-                getCodeBoxElement(i).value = ""
+                getCodeBoxElement(i).value = "";
             }
         }
         console.log('submit code ');

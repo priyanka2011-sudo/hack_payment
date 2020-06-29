@@ -1,4 +1,5 @@
 <?php include "header.php"; ?>
+<section id="otp_container">
         <header>One-Time-Password Cofirmation</header> <br>
         <label>Enter password: </label> <br> <br>
         <form>
@@ -7,4 +8,5 @@
 		<input id="codeBox3" type="number" maxlength="1" onkeyup="onKeyUpEvent(3, event)"  class="OTP">
 		<input id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)"  class="OTP">
 	</form>
+</section>
 <?php include "footer.php"; ?>
