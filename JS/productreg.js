@@ -18,6 +18,7 @@ function add() {
     inp.setAttribute("type","checkbox");
     spn.setAttribute("class","slider round");
     b_lbl.setAttribute("class","btn");
+    b_lbl.setAttribute("id","btn");
     rm.setAttribute("type","button");
     rm.setAttribute("onclick","remove()");
     img.setAttribute("class","icon");
