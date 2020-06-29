@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerList2.css">
-    <link rel="stylesheet" type="text/css" href="CSS/Invoiceinitiation.css">
+    <link rel="stylesheet" type="text/css" href="CSS/checkout.css">
     <script src="JS/CustomerList.js"></script>
     <script src="JS/invoiceinitiation.js"></script>
     <!-- <script src="JS/registration.js"></script> -->
@@ -25,50 +25,26 @@
     </div>
     <section id="main_container">
         <form name="form" action="#" onsubmit="return isValid();" method="post">            
-        <div class="container">
-              
-            <div class='col-75'>
-
-                <label for="products"></label>
-                <select id="products" name="products">
-                    <option value="p0" selected="selected"> Product/Service Name </option>
-                    <option value="p1">product1</option>
-                    <option value="p2">product2</option>
-                    <option value="p3">product3</option>
-                </select>
-
-                <label for="PrName"></label>      
-                <input type="text" placeholder="Product Name" name="PrName" id="PrName">
-
-                <label for="amount"></label>     
-                <input type="text" placeholder="Amount" name="amount" id="PramountName">
-                    
-                <label class="txt">Taxable</label>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>   
-        
-                <label class="btn">       
-                <button type="button" onclick="add()"><img class="icon" src="Media/add.png"></button>
-                </label>    
-            </div>               
-        </div>         
+        <div class="container">         
+        </div>     
+        <h1>Scan Barcode</h1>    
+        <hr>   
             </form>  
-            <div class="total">
-                <label for="amount" id="tamount">Amount</label>     
-                    <input type="text" placeholder="Amount" name="amount" id="amount">
-                    <br>
-                    <label for="tax" id="ttax">Tax</label>     
-                    <input type="text" placeholder="Tax Amount" name="tax" id="tax">
-                    <br><br>
-                    <label for="totalAmount">Total Amount</label>
-                </div>   
-                <br>               
+            <div class="search">
+                <label for="search" id="search"></label>     
+                    <input type="text" placeholder="Phone Number..." name="search" class="searchbar"> 
+                    <img src="Media/search.png" alt="search icon" class="button">
+                    <h1>Customer Profile</h1>          
+                </div>                   
+                <br>    
+                
+                <div class="con">                         
+                    <input type="submit" value="Scan Again"></input>    
+                    </div> 
             <hr>  
             <div class="con1">                         
-            <input type="submit" value="Checkout"></input>    
-        </div> 
+                <input type="submit" value="Continue"></input>    
+                </div>           
     </section>
 </body>
 <footer>
