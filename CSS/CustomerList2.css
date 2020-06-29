@@ -3,7 +3,7 @@ body {
 }
 * {
     font-size: large;
-    max-width: 1350px;
+    width: 100%;
 }
 /* CSS for top_bar */
 #top_bar {
