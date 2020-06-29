@@ -22,7 +22,7 @@
                     </div> 
             <hr>  
             <div class="con1">     
-                <a href="initiation3.html">                       
+                <a href="initiation3.php">                       
                 <input type="submit" value="Continue"></input></a>    
                 </div>           
 <?php include "footer.php"; ?>

@@ -42,7 +42,7 @@
                 <br>               
             <hr>  
             <div class="con"> 
-                <a href="initiation2.html">                        
+                <a href="initiation2.php">                        
             <input type="submit" value="Next"></input></a> 
         </div> 
 <?php include "footer.php"; ?>
