@@ -11,6 +11,7 @@ body {
     width: 100%;
     background-color:  #0bb082;
     height: 70px;
+    z-index: 100;
 }
 #menu_toggle {
     display: none;
