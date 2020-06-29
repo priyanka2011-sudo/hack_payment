@@ -101,6 +101,7 @@ body {
 }
 /* FOOTER */
 #footer_container {
+    margin-top: 40px;
     border-top: solid black 2px;    
     background-color: #756e6d;
     color: white;

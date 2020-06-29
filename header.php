@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerList2.css">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerRegisteration.css">
+    <link rel="stylesheet" type="text/css" href="CSS/OTPConfirmation.css">
     <script src="JS/CustomerList.js"></script>
+    <script src="JS/OTPConfirmation.js"></script>
     <!-- <script src="JS/registration.js"></script> -->
 </head>
 <body>
