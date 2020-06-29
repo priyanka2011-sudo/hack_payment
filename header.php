@@ -1,3 +1,4 @@
+<?php include "config/dbconnect.php";?>
 <!DOCTYPE html>
 <title>App</title>
 <head>
