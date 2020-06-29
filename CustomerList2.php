@@ -1,26 +1,4 @@
-<title>
-    App
-</title>
-<head>
-    <link rel="stylesheet" type="text/css" href="CSS/CustomerList2.css">
-    <script src="JS/CustomerList.js"></script>
-</head>
-<body>
-    <div id="top_bar">
-        <img src="Media/logo-placeholder.jpg" id="logo">
-        <img src="Media/menu_toggle3.png" id="menu_toggle" onclick="toggleMenu();">
-        <nav id="nav_bar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="Transaction.html">Transaction</a></li>
-                <li><a href="CustomerList2.html">Customer</a></li>
-                <li><a href="#FAQ">FAQ</a></li>   
-                <li><a href="#help">Help</a></li>
-            </ul>
-        </nav>
-        
-    </div>
-    <section id="main_container"> 
+<?php include "header.php"; ?>
         <a href="CustomerRegistration.html"><button id="create_customer" class="functional_button">Create Customer</button></a>
         <button id="scan_barcode" class="functional_button">Scan Barcode</button>
         <input type="text" id="search_by_phone" class="search_by" placeholder="Search by phone number">
@@ -50,22 +28,4 @@
                 <img src="Media/profile_icon.png" class="profile_icon" alt="profile_icon">
             </div>
         </section>
-    </section>
-</body>
-<footer>
-    <section id="footer_container">
-        <div id="footer_logo">
-            NVPSD team
-        </div>
-        <br>
-        <div id="footer_contact">
-            Contact us <br>
-            <img src="Media/phone3.png" class="footer_icon"> ########## <br>
-            <img src="Media/email.png" class="footer_icon"> asdf123@mail.com
-        </div>
-        <br>
-        <div id="copyright">
-            © Copyright 
-        </div>
-    </section>
-</footer>
+<?php include "footer.php"; ?>
