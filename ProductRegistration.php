@@ -1,5 +1,4 @@
 <?php include "header.php"; ?>
-<style><?php include 'CSS/ProductRegistration.css';?></style>
         <form name="form" action="#" onsubmit="return isValid();" method="post">            
         <div class="container">
               
