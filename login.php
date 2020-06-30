@@ -10,9 +10,9 @@ if(isset($_POST)){
 
     $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
       $exec_check_user  = mysqli_query($link,$check_user);
-print_r($exec_check_user);
+
       if (mysqli_num_rows($exec_check_user)==0){
-            echo $error_msg = "You are not authorised";
+            $error_msg = "You are not authorised";
       }
       else{
             $userdata = mysqli_fetch_array($exec_check_user);
