@@ -315,4 +315,6 @@ body {
 img.resize {
   width:50px;
   height:0%;
+  position: relative;
+  top: 50px;
 }
