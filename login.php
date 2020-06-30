@@ -4,21 +4,21 @@ $link = $_SESSION['connection'];
 error_reporting(0);
 if(isset($_POST)){
 
-      $UserName   =     $_POST['UserName'])?$_POST['UserName']:'';
-      $Password   =     $_POST['Password'])?$_POST['Password']:'';
+      $UserName   =     isset($_POST['UserName'])?$_POST['UserName']:'';
+      $Password   =     isset($_POST['Password'])?$_POST['Password']:'';
 
 
-      echo $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
+    $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
       $exec_check_user  = mysqli_query($link,$check_user);
-
+print_r($exec_check_user);
       if (mysqli_num_rows($exec_check_user)==0){
-            $error_msg = "You are not authorised";
+            echo $error_msg = "You are not authorised";
       }
       else{
-            $userdata = mysql_fetch_array($exec_check_user);
+            $userdata = mysqli_fetch_array($exec_check_user);
             echo $_SESSION['loginId']    =     $userdata['loginId'];
             echo $_SESSION['UserTypeID']    =     $userdata['UserTypeID'];
-
+        echo "priyanka";
             if($userdata['UserTypeID']==1 || $userdata['UserTypeID']==2){
                   header('Location: CustomerList2.php');
             }
