@@ -66,10 +66,10 @@ body {
     opacity: 70%;
 }
 #create_customer {
-    float: left;
+    float: right;
 }
 #scan_barcode {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 0px;
 }
 
 .search_by {
