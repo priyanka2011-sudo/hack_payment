@@ -137,10 +137,6 @@ body {
     margin-right: 15px;
   }
 
-  #a_new
-  {
-    margin-left: 5px;
-  }
   #btn
   {
     margin-left: 19px;
@@ -307,6 +303,3 @@ body {
   text-align: center;
 }
 
-#div{
-  margin-left: 10%;
-}
