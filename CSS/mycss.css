@@ -50,7 +50,7 @@ body {
   text-align: right;
 }
 
-.prov,.address,.country,.city,.tel,.pcode,.bname
+.prov,.address,.country,.city,.tel,.pcode,.bname, .btype
 {
   width: 50%;
   padding: 15px;
@@ -59,7 +59,7 @@ body {
   border: none;
   background: #f1f1f1;
 }
-
+/* 
 .btype
 {
   width: 50%;
@@ -68,7 +68,7 @@ body {
   display: inline-block;
   border: none;
   background: #f1f1f1;
-}
+} */
 
 * {
   box-sizing: border-box;
