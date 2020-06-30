@@ -158,8 +158,9 @@ if(isset($_POST['BusinessName'])){
                 <div class='col-25'>
                 <label for="phonenum"></label></div> 
                 <div class='col-75'>
-                <label>
+                <br><br><br><br>
                 </div> 
+
                 <div class='col-25'>
                 <label for="phonenum"></label></div> 
                 <div class='col-75'>
