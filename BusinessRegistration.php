@@ -1,39 +1,46 @@
 <?php include "header.php"; 
 $link = $_SESSION['connection'];
 
+$BusinessTypeID = $BusinessName = $BusinessAddressLine1 = $BusinessAddressLine2 = $BusinessCity = $BusinessProvince = $BusinessCountry = $BusinessPostalCode = $BusinessPhone = $BusinessLogo = $BusinessRegNo = $TaxRegNo = $TaxPercent = $CreatedAt = $CreatedBy = $UpdatedAt = $UpdatedBy = $DeletedAt = $DeletedBy = '';
 
 //Business Type dropdown
     $BusinessTypeID = $bus_type_option = "";
     $bus_type_query = "select * from businesstype";
     $bus_exec       = mysqli_query($link,$bus_type_query);
     while ($row = mysqli_fetch_assoc($bus_exec)){
-        if($row['TypeID'] = $BusinessTypeID){
-            $bus_type_option.= "<option value=".$row['TypeID'].">".$row['TypeName']."</option>";
+        //echo $row['TypeID'];
+        if($row['TypeID'] == $BusinessTypeID){
+           
+            $bus_type_option.= "<option value='".$row['TypeID']."'>".$row['TypeName']."</option>";
         }
         else{
-            $bus_type_option.= "<option value=".$row['TypeID'].">".$row['TypeName']." selected </option>";
+            $bus_type_option.= "<option value='".$row['TypeID']."'>".$row['TypeName']." selected </option>";
         }
-        
     }
+    
+//end business type dropdown
+
 
 
 //end business type dropdown
-if(isset($_POST)){
+if(isset($_POST['BusinessName'])){
     $BusinessTypeID = $businessname = $BusinessAddressLine1 = $BusinessAddressLine2 = $BusinessCity = $BusinessProvince = $BusinessCountry = $BusinessPostalCode = $BusinessPhone = $BusinessLogo = $BusinessRegNo = $TaxRegNo = $TaxPercent = $CreatedAt = $CreatedBy = $UpdatedAt = $UpdatedBy = $DeletedAt = $DeletedBy = 0;
 
-    $BusinessTypeID         =   isset($_POST['BusinessTypeID']);
-    $BusinessName           =   isset($_POST['BusinessName']);
-    $BusinessAddressLine1   =   isset($_POST['BusinessAddressLine1']);
-    $BusinessAddressLine2   =   isset($_POST['BusBusinessAddressLine2inessID']);
-    $BusinessCity           =   isset($_POST['BusinessCity']);
-    $BusinessProvince       =   isset($_POST['BusinessProvince']);
-    $BusinessCountry        =   isset($_POST['BusinessCountry']);
-    $BusinessPostalCode     =   isset($_POST['BusinessPostalCode']);
-    $BusinessPhone          =   isset($_POST['BusinessPhone']);
-    $BusinessLogo           =   isset($_POST['BusinessLogo']);
-    $BusinessRegNo          =   isset($_POST['BusinessRegNo']);
-    $TaxRegNo               =   isset($_POST['TaxRegNo']);
-    $TaxPercent             =   isset($_POST['TaxPercent']);
+
+        
+
+    $BusinessTypeID         =   isset($_POST['BusinessTypeID'])?$_POST['BusinessTypeID']:'';
+    $BusinessName           =   isset($_POST['BusinessName'])?$_POST['BusinessName']:'';
+    $BusinessAddressLine1   =   isset($_POST['BusinessAddressLine1'])?$_POST['BusinessAddressLine1']:'';
+    $BusinessAddressLine2   =   isset($_POST['BusinessAddressLine2'])?$_POST['BusinessAddressLine2']:'';
+    $BusinessCity           =   isset($_POST['BusinessCity'])?$_POST['BusinessCity']:'';
+    $BusinessProvince       =   isset($_POST['BusinessProvince'])?$_POST['BusinessProvince']:'';
+    $BusinessCountry        =   isset($_POST['BusinessCountry'])?$_POST['BusinessCountry']:'';
+    $BusinessPostalCode     =   isset($_POST['BusinessPostalCode'])?$_POST['BusinessPostalCode']:'';
+    $BusinessPhone          =   isset($_POST['BusinessPhone'])?$_POST['BusinessPhone']:'';
+    $BusinessRegNo          =   isset($_POST['BusinessRegNo'])?$_POST['BusinessRegNo']:'';
+    $TaxRegNo               =   isset($_POST['TaxRegNo'])?$_POST['TaxRegNo']:'';
+    $TaxPercent             =   isset($_POST['TaxPercent'])?$_POST['TaxPercent']:'';
     $CreatedAt              =   date("Y-m-d h:i:s");
     $CreatedBy              =   isset($_SESSION['loginId']);
     $UpdatedAt              =   NULL;
@@ -41,6 +48,51 @@ if(isset($_POST)){
     $DeletedAt              =   NULL; 
     $DeletedBy              =   NULL;
 
+
+    //upload logo code
+        $target_dir = "media/business_logo/";
+        $target_file = $target_dir . basename($_FILES["BusinessLogo"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+        // check image file authenticity
+        if(isset($_POST["submit"])) {
+          $check = getimagesize($_FILES["BusinessLogo"]["tmp_name"]);
+          if($check !== false) {
+            $uploadOk = 1; //File is an image
+          } else {
+            $uploadOk = 0; //File is not an image
+          }
+        }
+
+        // checking if file already exist
+        if (file_exists($target_file)) {
+          $uploadOk = 0; //file already exists
+        }
+
+        // Checking file size
+        if ($_FILES["BusinessLogo"]["size"] > 400000) {
+          $uploadOk = 0; //your file is too large
+        }
+
+        // checking file formats
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+          $uploadOk = 0; //only JPG, JPEG, PNG & GIF files are allowed
+        }
+
+        // not allowing file upload
+        if ($uploadOk == 0) {
+          $image_error = "Sorry, something is wrong, your file was not uploaded.";
+        // if everything is ok, try to upload file
+        } else {
+          if (move_uploaded_file($_FILES["BusinessLogo"]["tmp_name"], $target_file)) {
+                $BusinessLogo   =   $_FILES["BusinessLogo"]["name"];
+          } else {
+            $image_error = "Sorry, there was an error uploading your file.";
+          }
+        }
+        //end upload logo code
     $bus_insert_query = "INSERT INTO `business`(
                                     `BusinessTypeID`,
                                     `BusinessName`,
@@ -87,19 +139,19 @@ if(isset($_POST)){
 }
 
 ?>
-        <form name="form" action="#" onsubmit="return isValid();" method="post">            
+        <form name="form" action="" onsubmit="return isValid();" method="post" enctype="multipart/form-data">            
             <div class="container">
               
                 <div class='col-25'>
-                <label for="businessname"></label></div> 
+                <label for="BusinessName"></label></div> 
                 <div class='col-75'>
-                <input type="text" placeholder="Business Name" name="BusinessName" id="businessname" value="<?=$BusinessName?>" required>
+                <input type="text" placeholder="Business Name" name="BusinessName" id="BusinessName" value="<?=$BusinessName?>" required>
                 </div> 
 
                 <div class='col-25'>
                 <label for="businesstype"></label></div> 
                 <div class='col-75'>
-                <select class="prov" placeholder="Business Type" name="BusinessTypeID" id="businesstype">       
+                <select class="prov" placeholder="Business Type" name="BusinessTypeID" id="BusinessTypeID">       
                     <?php echo $bus_type_option;?>
                 </div> 
 
