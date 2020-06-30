@@ -87,13 +87,9 @@ body {
     margin-left: 70%;
   }
 
-  #amount
+  #amount, #tax
   {
     margin-left: 70px;
-  }
-  #tax
-  {
-    margin-left: 103px;
   }
   
   /* input[type=text]{
