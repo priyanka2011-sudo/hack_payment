@@ -148,7 +148,13 @@ if(isset($_POST['BusinessName'])){
                 <input type="text" placeholder="Business Name" name="BusinessName" id="BusinessName" value="<?=$BusinessName?>" required>
                 </div>
 
-
+                
+                <div class='col-25'>
+                <label for="businesstype"></label></div>
+                <div class='col-75'>
+                <select class="prov" placeholder="Business Type" name="BusinessTypeID" id="BusinessTypeID">
+               
+                </div>
 
                 <div class='col-25'>
                 <label for="phonenum"></label></div>
