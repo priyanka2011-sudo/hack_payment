@@ -3,8 +3,10 @@
 if(!($_SESSION['loginId'])){
     header('Location: login.php');
 }
-
 ?>
+<style>
+<?php include 'CSS/mycss.css'; ?>
+</style>
 <!DOCTYPE html>
 <title>App</title>
 <head>
