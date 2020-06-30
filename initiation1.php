@@ -12,11 +12,8 @@
                     <option value="p3">product3</option>
                 </select>
 
-                <label for="PrName"></label>      
-                <input type="text" placeholder="Quantity" class="initiation_text" name="PrName" id="PrName">
-
-                <label for="amount"></label>     
-                <input type="text" placeholder="Amount" name="amount" id="PramountName">
+                <input type="text" id="amount" placeholder="Amount" class="amount">
+                <input type="text" id="taxamount" placeholder="Tax Amount" class="taxamount">
                     
                 <label class="txt">Taxable</label>
                 <label class="switch">
