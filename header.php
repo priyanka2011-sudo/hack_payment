@@ -1,5 +1,5 @@
 <?php include "config/dbconnect.php";
-
+error_reporting(0);
 if(!($_SESSION['loginId'])){
     header('Location: login.php');
 }
