@@ -1,6 +1,6 @@
 <?php include "header.php"; ?>
         <form name="form" action="#" onsubmit="return isValid();" method="post">            
-        <div class="container">
+        <div class="div">
               
             <div class='col-75'>
 
