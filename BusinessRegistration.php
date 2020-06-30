@@ -154,7 +154,7 @@ if(isset($_POST['BusinessName'])){
                 <select class="prov" placeholder="Business Type" name="BusinessTypeID" id="BusinessTypeID">       
                     <?php echo $bus_type_option;?>
                 </div> 
-
+                <br>
                 <div class='col-25'>
                 <label for="phonenum"></label></div> 
                 <div class='col-75'>
