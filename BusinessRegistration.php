@@ -234,8 +234,8 @@ if(isset($_POST['BusinessName'])){
                 </div> 
 
                 <div class='col-25'>
-                <label for="BusinessLogo">Logo</label></div>
-                <img id="logo" class ="resize" src="Media\business_logo/logo.png"  alt="LOGO">
+                <label for="BusinessLogo"></label></div>
+                <img class ="resize" src="Media\business_logo/logo.png"  alt="LOGO">
                 <div class='col-50'>
                 <input type="file" placeholder="BusinessLogo" name="BusinessLogo" id="BusinessLogo" required>
                 </div> 
