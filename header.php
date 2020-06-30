@@ -1,8 +1,8 @@
 <?php include "config/dbconnect.php";
-
-// if(!($_SESSION['loginId'])){
-//     header('Location: login.php');
-// }
+error_reporting(0);
+if(!($_SESSION['loginId'])){
+    header('Location: login.php');
+}
 ?>
 <style>
 <?php include 'CSS/mycss.css'; ?>

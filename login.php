@@ -1,11 +1,12 @@
 <?php
 include "config/dbconnect.php";
 $link = $_SESSION['connection'];
-
+error_reporting(0);
 if(isset($_POST)){
 
-      $UserName   =   $_POST['UserName'];
-      $Password   =   $_POST['Password'];
+      $UserName   =     $_POST['UserName'];
+      $Password   =     $_POST['Password'];
+
 
       echo $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
       $exec_check_user  = mysqli_query($link,$check_user);
