@@ -4,16 +4,14 @@ if(!($_SESSION['loginId'])){
     header('Location: login.php');
 }
 ?>
-<style>
-<?php include 'CSS/mycss.css'; ?>
-</style>
+
 <!DOCTYPE html>
 <title>App</title>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerList2.css">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerRegisteration.css">
-    <link rel="stylesheet" type="text/css" href="CSS/Invoiceinitiation.css">
+    <link rel="stylesheet" type="text/css" href="CSS/mycss.css">
     <script src="JS/CustomerList.js"></script>
     <script src="JS/invoiceinitiation.js"></script>
     <script src="JS/registration.js"></script>
