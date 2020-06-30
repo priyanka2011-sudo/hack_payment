@@ -7,7 +7,8 @@ if(isset($_POST)){
       $UserName   =     $_POST['UserName'])?$_POST['UserName']:'';
       $Password   =     $_POST['Password'])?$_POST['Password']:'';
 
-      $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
+
+      echo $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
       $exec_check_user  = mysqli_query($link,$check_user);
 
       if (mysqli_num_rows($exec_check_user)==0){
