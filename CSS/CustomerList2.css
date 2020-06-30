@@ -61,6 +61,8 @@ body {
     color: white;
     border: none;
     border-radius: 5%;
+}
+#transaction_init, #create_customer {
     float: left;
 }
 .functional_button:hover {
