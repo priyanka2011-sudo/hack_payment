@@ -91,7 +91,10 @@ body {
   {
     margin-left: 70px;
   }
-  
+  #tax
+  {
+    margin-left: 103px;
+  }
   /* input[type=text]{
     width:30%;
     padding: 15px;
