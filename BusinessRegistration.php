@@ -235,7 +235,7 @@ if(isset($_POST['BusinessName'])){
 
                 <div class='col-25'>
                 <label for="BusinessLogo">Logo</label></div>
-                <img class="resize" src="C:\xampp\htdocs\hack_payment\Media\business_logo\logo.png"  alt="LOGO">
+                <img id="logo" src="Media\business_logo/logo.png"  alt="LOGO">
                 <div class='col-50'>
                 <input type="file" placeholder="BusinessLogo" name="BusinessLogo" id="BusinessLogo" required>
                 </div> 
