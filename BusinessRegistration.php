@@ -156,9 +156,7 @@ if(isset($_POST['BusinessName'])){
                 </div> 
                
                 <div class='col-25'>
-                <label for="phonenum"></label></div> 
-                <div class='col-75'>
-                <input type="tel" placeholder="Phone Number" name="BusinessPhone" id="phonenum" value="<?=$BusinessPhone?>" pattern=".{10,}" title="Phone Number cannot be less than 10 digits"oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>
+                
                 </div> 
                 <div class='col-25'>
                 <label for="phonenum"></label></div> 
