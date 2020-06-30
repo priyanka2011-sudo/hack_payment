@@ -54,7 +54,7 @@ body {
     padding-left: 10px;
 }
 .functional_button {
-    width: 30%;
+    width: 50px;
     height: 50px;
     padding: 0 20px;
     background-color: #088c67;
@@ -62,9 +62,7 @@ body {
     border: none;
     border-radius: 5%;
 }
-#transaction_init, #create_customer {
-    float: left;
-}
+
 .functional_button:hover {
     opacity: 70%;
 }
