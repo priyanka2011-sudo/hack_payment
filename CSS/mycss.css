@@ -50,7 +50,7 @@ body {
   text-align: right;
 }
 
-.prov,.address,.country,.city,.tel,.pcode,.bname
+.prov,.address,.country,.city,.tel,.pcode,.bname,.btype
 {
   width: 50%;
   padding: 15px;
