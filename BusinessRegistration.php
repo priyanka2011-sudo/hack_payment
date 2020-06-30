@@ -234,7 +234,7 @@ if(isset($_POST['BusinessName'])){
                 </div> 
 
                 <div class='col-25'>
-                <label for="BusinessLogo">Logo </label></div> 
+                <label for="BusinessLogo">Logo</label></div>
                 <div class='col-50'>
                 <input type="file" placeholder="BusinessLogo" name="BusinessLogo" id="BusinessLogo" required>
                 </div> 
