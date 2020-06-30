@@ -70,6 +70,10 @@ body {
 #scan_barcode {
     margin: 60px 0 20px 40px;
 }
+#transaction_init,#create_customer {
+    float: left;
+   
+}
 .search_by {
     margin: 0 0 20px 40px;
 }

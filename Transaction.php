@@ -1,6 +1,6 @@
 <?php include "header.php"; ?>
         <a href="initiation1.php">
-        <button id="transaction_init" class="functional_button">Initate Transaction</button></a>
+        <button type="button" id="transaction_init" class="functional_button">Initiate Transaction</button></a>
         <input type="text" id="search_by_phone" placeholder="Search by phone number" class="search_by">
         <input type="text" id="search_by_email" placeholder="Search by email" class="search_by">
         <section id="profile_list">
