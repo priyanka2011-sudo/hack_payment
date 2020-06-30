@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2020 at 09:55 PM
+-- Generation Time: Jun 30, 2020 at 04:47 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -43,14 +43,21 @@ CREATE TABLE `business` (
   `BusinessRegNo` varchar(50) NOT NULL,
   `TaxRegNo` varchar(50) NOT NULL,
   `TaxPercent` varchar(50) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
   `CreatedBy` varchar(50) NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `UpdatedBy` varchar(50) NOT NULL,
-  `DeletedAt` datetime NOT NULL,
+  `UpdatedAt` datetime DEFAULT NULL,
+  `UpdatedBy` varchar(50) DEFAULT NULL,
+  `DeletedAt` datetime DEFAULT NULL,
   `DeletedBy` varchar(50) NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `business`
+--
+
+INSERT INTO `business` (`BusinessID`, `BusinessTypeID`, `BusinessName`, `BusinessAddressLine1`, `BusinessAddressLine2`, `BusinessCity`, `BusinessProvince`, `BusinessCountry`, `BusinessPostalCode`, `BusinessPhone`, `BusinessLogo`, `BusinessRegNo`, `TaxRegNo`, `TaxPercent`, `CreatedAt`, `CreatedBy`, `UpdatedAt`, `UpdatedBy`, `DeletedAt`, `DeletedBy`, `IsDeleted`) VALUES
+(1, 1, 'rertertert', '304/C WING,RAMGANGA APT,KRANTINAGAR, NAVGHARROAD', 'sasdasd', 'BHAYANDAR', '1', 'sdfsdf', 'A1A 1A1', '7208304307', 'unnamed.png', 'fgdfgdfg', 'sdfsdfsf', 'sdfsdfsdf', '2020-06-30 02:03:03', '1', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', 0);
 
 -- --------------------------------------------------------
 
@@ -62,10 +69,18 @@ CREATE TABLE `businesstype` (
   `TypeID` int(11) NOT NULL,
   `TypeName` varchar(50) NOT NULL,
   `CreatedAt` datetime NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `DeletedAt` datetime NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `UpdatedAt` datetime DEFAULT NULL,
+  `DeletedAt` datetime DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `businesstype`
+--
+
+INSERT INTO `businesstype` (`TypeID`, `TypeName`, `CreatedAt`, `UpdatedAt`, `DeletedAt`, `IsDeleted`) VALUES
+(1, 'Grocery Store', '2020-06-29 00:00:00', '2020-06-29 00:00:00', NULL, 0),
+(2, 'Cleaning Services', '2020-06-29 00:00:00', '2020-06-29 00:00:00', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -78,13 +93,13 @@ CREATE TABLE `customer` (
   `CustomerName` varchar(200) NOT NULL,
   `CustomerEmailID` varchar(200) NOT NULL,
   `CustomerPhone` varchar(50) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
   `CreatedBy` varchar(100) NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `UpdatedBy` varchar(100) NOT NULL,
-  `DeletedAt` datetime NOT NULL,
-  `DeletedBy` varchar(100) NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `UpdatedAt` datetime DEFAULT NULL,
+  `UpdatedBy` varchar(100) DEFAULT NULL,
+  `DeletedAt` datetime DEFAULT NULL,
+  `DeletedBy` varchar(100) DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -100,13 +115,13 @@ CREATE TABLE `invoice` (
   `InvoiceNumber` int(50) NOT NULL,
   `InvoiceDate` date NOT NULL,
   `PaymentID` int(50) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
   `CreatedBy` varchar(50) NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `UpdatedBy` varchar(50) NOT NULL,
-  `DeletedAt` datetime NOT NULL,
-  `DeletedBy` varchar(50) NOT NULL,
-  `IsDeleted` int(50) NOT NULL
+  `UpdatedAt` datetime DEFAULT NULL,
+  `UpdatedBy` varchar(50) DEFAULT NULL,
+  `DeletedAt` datetime DEFAULT NULL,
+  `DeletedBy` varchar(50) DEFAULT NULL,
+  `IsDeleted` int(50) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -120,9 +135,9 @@ CREATE TABLE `invoiceitem` (
   `ProductID` int(50) NOT NULL,
   `Quantity` int(50) NOT NULL,
   `Amount` float(10,2) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `UpdatedAt` datetime DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -132,19 +147,26 @@ CREATE TABLE `invoiceitem` (
 --
 
 CREATE TABLE `login` (
-  `LoginID` int(50) NOT NULL,
+  `loginId` int(50) NOT NULL,
   `UserTypeID` int(50) NOT NULL,
   `UserID` int(50) NOT NULL,
   `UserName` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
   `CreatedBy` varchar(50) NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `UpdateBy` varchar(50) NOT NULL,
-  `DeletedAt` datetime NOT NULL,
-  `DeletedBy` varchar(50) NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `UpdatedAt` datetime DEFAULT NULL,
+  `UpdateBy` varchar(50) DEFAULT NULL,
+  `DeletedAt` datetime DEFAULT NULL,
+  `DeletedBy` varchar(50) DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`loginId`, `UserTypeID`, `UserID`, `UserName`, `Password`, `CreatedAt`, `CreatedBy`, `UpdatedAt`, `UpdateBy`, `DeletedAt`, `DeletedBy`, `IsDeleted`) VALUES
+(1, 2, 1, 'test_user', 'abcd', '2020-06-29 19:07:39', '', NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -158,9 +180,9 @@ CREATE TABLE `merchantaccount` (
   `UserName` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `Token` varchar(50) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `UpdatedAt` datetime DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -175,9 +197,9 @@ CREATE TABLE `payment` (
   `MerchantAccountID` int(50) NOT NULL,
   `PaymentAmount` float(10,2) NOT NULL,
   `Settlement` float(10,2) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `IsDeleted` datetime NOT NULL
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `UpdatedAt` datetime DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -190,9 +212,9 @@ CREATE TABLE `paymentmethod` (
   `PayMethodID` int(11) NOT NULL,
   `CustomerID` int(50) NOT NULL,
   `PayProfileID` varchar(100) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `UpdatedAt` datetime DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -207,9 +229,9 @@ CREATE TABLE `product` (
   `ProductName` varchar(200) NOT NULL,
   `ProductAmount` float(10,2) NOT NULL,
   `Taxable` tinyint(1) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `UpdatedAt` datetime DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -221,11 +243,20 @@ CREATE TABLE `product` (
 CREATE TABLE `usertype` (
   `UserTypeID` int(50) NOT NULL,
   `UserTypeName` varchar(50) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  `UpdatedAt` datetime NOT NULL,
-  `DeletedAt` datetime NOT NULL,
-  `IsDeleted` tinyint(1) NOT NULL
+  `CreatedAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `UpdatedAt` datetime DEFAULT NULL,
+  `DeletedAt` datetime DEFAULT NULL,
+  `IsDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `usertype`
+--
+
+INSERT INTO `usertype` (`UserTypeID`, `UserTypeName`, `CreatedAt`, `UpdatedAt`, `DeletedAt`, `IsDeleted`) VALUES
+(1, 'superadmin', '2020-06-29 18:59:24', NULL, NULL, 0),
+(2, 'business', '2020-06-29 18:59:24', NULL, NULL, 0),
+(3, 'customer', '2020-06-29 19:05:27', NULL, NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -265,7 +296,7 @@ ALTER TABLE `invoiceitem`
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`LoginID`);
+  ADD PRIMARY KEY (`loginId`);
 
 --
 -- Indexes for table `merchantaccount`
@@ -305,13 +336,13 @@ ALTER TABLE `usertype`
 -- AUTO_INCREMENT for table `business`
 --
 ALTER TABLE `business`
-  MODIFY `BusinessID` int(18) NOT NULL AUTO_INCREMENT;
+  MODIFY `BusinessID` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `businesstype`
 --
 ALTER TABLE `businesstype`
-  MODIFY `TypeID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TypeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -335,7 +366,7 @@ ALTER TABLE `invoiceitem`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `LoginID` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `loginId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `merchantaccount`
@@ -365,7 +396,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `usertype`
 --
 ALTER TABLE `usertype`
-  MODIFY `UserTypeID` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserTypeID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
