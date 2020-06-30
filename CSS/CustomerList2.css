@@ -55,7 +55,7 @@ body {
 }
 .functional_button {
     height: 50px;
-    padding: 0 20px;
+  
     background-color: #088c67;
     color: white;
     border: none;
@@ -70,10 +70,7 @@ body {
 #scan_barcode {
     margin: 60px 0 20px 40px;
 }
-#transaction_init,#create_customer {
-    float: left;
-   
-}
+
 .search_by {
     margin: 0 0 20px 40px;
 }
