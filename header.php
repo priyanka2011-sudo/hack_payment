@@ -19,7 +19,7 @@ if(!($_SESSION['loginId'])){
 </head>
 <body>
     <div id="top_bar">
-        <img src="Media/logo-placeholder.jpg" id="logo">
+        <img src="Media/logo.png" id="logo">
         <img src="Media/menu_toggle3.png" id="menu_toggle" onclick="toggleMenu();">
         <nav id="nav_bar">
             <ul>

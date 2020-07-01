@@ -1,4 +1,5 @@
 <html>
+<?php include "header.php"; ?>
 <head>
 	<style type="text/css">
 		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:Open Sans, sans-serif; font-size:11px; } 
@@ -188,5 +189,6 @@ base rates under the Late Payment of Commercial Debts (Interest) Act 1998</td>
     
 </div>
 </body>
+<?php include "footer.php"; ?>
 </html>
 
