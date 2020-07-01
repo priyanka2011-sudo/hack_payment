@@ -12,8 +12,10 @@ if(!($_SESSION['loginId'])){
     <link rel="stylesheet" type="text/css" href="CSS/CustomerList2.css">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerRegisteration.css">
     <link rel="stylesheet" type="text/css" href="CSS/mycss.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="JS/CustomerList.js"></script>
     <script src="JS/invoiceinitiation.js"></script>
+    <!-- <script src="JS/productreg.js"></script> -->
     <script src="JS/registration.js"></script>
     <script src="JS/OTPConfirmation.js"></script>
 </head>
@@ -23,9 +25,11 @@ if(!($_SESSION['loginId'])){
         <img src="Media/menu_toggle3.png" id="menu_toggle" onclick="toggleMenu();">
         <nav id="nav_bar">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="Transaction.php">Transaction</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="BusinessRegistration.php">Buisness Profile</a></li>
+                <li><a href="ProductRegistration.php">Product</a></li>
                 <li><a href="CustomerList2.php">Customer</a></li>
+                <li><a href="Transaction.php">Transaction</a></li>
                 <li><a href="#FAQ">FAQ</a></li>   
                 <li><a href="#help">Help</a></li>
                 <li><a href="logout.php">Logout</a></li>

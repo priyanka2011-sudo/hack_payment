@@ -10,25 +10,40 @@ if(isset($_POST)){
 
     $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
       $exec_check_user  = mysqli_query($link,$check_user);
-print_r($exec_check_user);
+
       if (mysqli_num_rows($exec_check_user)==0){
-            echo $error_msg = "You are not authorised";
+            $error_msg = "You are not authorised";
       }
       else{
             $userdata = mysqli_fetch_array($exec_check_user);
             echo $_SESSION['loginId']    =     $userdata['loginId'];
             echo $_SESSION['UserTypeID']    =     $userdata['UserTypeID'];
         echo "priyanka";
-            if($userdata['UserTypeID']==1 || $userdata['UserTypeID']==2){
+            if($userdata['UserTypeID']==1){
                   header('Location: CustomerList2.php');
             }
+            elseif($userdata['UserTypeID']==2){
+               //get business id
+               $get_bus_id = "select BusinessID from business b JOIN login l ON (b.BusinessID = l.UserID) 
+               where l.UserTypeID=2 and loginId =".$_SESSION['loginId'];
+
+               $result_bus_id     = mysqli_fetch_array(mysqli_query($link,$get_bus_id));
+               $_SESSION['BusinessID']  = $result_bus_id['BusinessID'];
+
+               header('Location: CustomerList2.php');
+            }
             else{
-                  //header('Location: http://www.example.com/');
+              //code for customer
             }
             
       }
 }
+ //get business id
+     $get_bus_id = "select BusinessID from business b JOIN login l ON (b.BusinessID = l.UserID) 
+     where l.UserTypeID=2 and loginId =".$login_id;
 
+     $result_bus_id     = mysqli_fetch_array(mysqli_query($link,$get_bus_id));
+     $BusinessID        = $result_bus_id['BusinessID'];
 ?>
 <!DOCTYPE html>
 <title>App</title>
