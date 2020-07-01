@@ -86,15 +86,16 @@ $('.qty').change(function() {
 function update_amounts()
 {
 var sum = 0.0;
-$('#myTable > tbody  > tr').each(function() {
-    var qty = $(this).find('option:selected').val();
+$('#myTable > tbody  > tr').each(function()
+ {
+    var qty = $(this).find('.quantity').val();
     var price = $(this).find('.price').val();
     var tax = $(this).find('.ttxt').val();
     var amount = ((qty*price) * tax) + (qty*price);
     sum+=amount;
     $(this).find('.amount').text(''+amount);
 });
-//just update the total to sum    
+    
 }
 });
 </script>
