@@ -1,50 +1,23 @@
-function add() {
-    var div = document.createElement("DIV");
-    var x = document.createElement("INPUT");
-    var y = document.createElement("INPUT");
 
-    var label = document.createElement("LABEL");
-    var lbl = document.createElement("LABEL");
-    var inp = document.createElement("INPUT");
-    var spn = document.createElement("SPAN");
-    var txt = document.createTextNode("Taxable");
-    var b_lbl = document.createElement("LABEL");
-    var rm = document.createElement("BUTTON");
-    var img = document.createElement("IMG");
-
-    label.setAttribute("class","txt");
-    label.setAttribute("id","txt");
-    lbl.setAttribute("class","switch");
-    inp.setAttribute("type","checkbox");
-    spn.setAttribute("class","slider round");
-    b_lbl.setAttribute("class","btn");
-    b_lbl.setAttribute("id","btn");
-    rm.setAttribute("type","button");
-    rm.setAttribute("onclick","remove()");
-    img.setAttribute("class","icon");
-    img.setAttribute("src","Media/rm.png");
-
-    div.setAttribute("id","div");
-
-    x.setAttribute("type", "text");
-    x.setAttribute("placeholder", "Product Name");   
-    x.setAttribute("id", "_new");   
-
-    y.setAttribute("type", "text");
-    y.setAttribute("placeholder", "Amount");   
-    y.setAttribute("id", "a_new");       
+$(document).ready(function(){
+    var add_product = $('.add_product'); //Add button selector
+    var wrapper = $('.extra_product'); //Input field wrapper
+    var newRow = '<div><input type="text" placeholder="Product Name" name="productname[]" id="PrName"><input type="text" placeholder="Amount" name="amount[]" id="PramountName"><label class="txt">Taxable</label><label class="switch"><input type="checkbox" value="0" name="taxable[]"><span class="slider round"></span></label><a href="javascript:void(0);" class="remove_product"><img src="Media/rm.png" width="30px" height="30px"/></a></div>'; //New input field html 
+    var x = 1; //Initial counter
     
-    document.form.appendChild(div).appendChild(x);
-    document.form.appendChild(div).appendChild(y); 
-    document.form.appendChild(div).appendChild(label).appendChild(txt);
-    document.form.appendChild(div).appendChild(lbl).appendChild(inp);
-    document.form.appendChild(div).appendChild(lbl).appendChild(spn);
-    document.form.appendChild(div).appendChild(b_lbl).appendChild(rm).appendChild(img);
+    //Once add product is clicked
+    $(add_product).click(function(){
+       
+            $(wrapper).append(newRow); //Add new Row
+            x++; //Increment counter
+    });
     
-  }
+    //Once remove product is clicked
+    $(wrapper).on('click', '.remove_product', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove(); //Remove new row
+        x--; //Decrement counter
+    });
 
- function remove()
- {
-     var x = document.getElementById("div");
-     x.remove();
- }
+    
+});

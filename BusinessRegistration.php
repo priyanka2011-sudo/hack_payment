@@ -134,11 +134,14 @@ if(isset($_POST['BusinessName'])){
                                     '$DeletedAt',
                                     '$DeletedBy'
                                     )";
+
     $bus_exec       = mysqli_query($link,$bus_insert_query);
 
 }
 
 ?>
+
+
         <form name="form" action="" onsubmit="return isValid();" method="post" enctype="multipart/form-data">
             <div class="container">
 

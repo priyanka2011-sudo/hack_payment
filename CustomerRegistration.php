@@ -1,6 +1,46 @@
-<?php include "header.php"; ?>
+<?php
+include "header.php"; 
+$link = $_SESSION['connection'];
 
-        <form name="form" action="#" onsubmit="return isValid();" method="post">            
+
+if(isset($_POST['name'])){
+
+    $CustomerName           =   isset($_POST['name'])?$_POST['name']:'';
+    $CustomerPhone          =   isset($_POST['phonenum'])?$_POST['phonenum']:'';
+    $CustomerEmailID        =   isset($_POST['email'])?$_POST['email']:'';
+    $CreatedAt              =   date("Y-m-d h:i:s");
+    $CreatedBy              =   isset($_SESSION['loginId']);
+    $UpdatedAt              =   NULL;
+    $UpdatedBy              =   NULL;
+    $DeletedAt              =   NULL;
+    $DeletedBy              =   NULL;
+
+    $cust_insert_query = "INSERT INTO `customer`(
+                                        `CustomerName`,
+                                        `CustomerEmailID`,
+                                        `CustomerPhone`,
+                                        `CreatedAt`,
+                                        `CreatedBy`
+                                    )
+                                    VALUES(
+                                        '$CustomerName',
+                                        '$CustomerEmailID',
+                                        '$CustomerPhone',
+                                        '$CreatedAt',
+                                        '$CreatedBy'
+                                    )";
+
+    $cust_exec       = mysqli_query($link,$cust_insert_query);
+
+    if(!$cust_exec){
+            echo mysqli_error($link);
+    }
+}
+
+
+?>
+
+        <form name="form" action="" onsubmit="return isValid();" method="post">            
             <div class="container">
               
                 <div class='col-25'>

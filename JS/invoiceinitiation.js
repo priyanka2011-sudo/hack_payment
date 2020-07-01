@@ -1,4 +1,4 @@
-function add() {
+function addInvItem() {
     var div = document.createElement("DIV");
     var x = document.createElement("INPUT");
     var y = document.createElement("INPUT");
@@ -53,7 +53,7 @@ function add() {
     
   }
 
- function remove()
+ function invItemremove()
  {
      var x = document.getElementById("div");
      x.remove();
