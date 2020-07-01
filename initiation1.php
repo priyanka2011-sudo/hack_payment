@@ -76,16 +76,17 @@ $link = $_SESSION['connection'];
 
     var newRow = '<div><select id="products" name="productname[]"><option>Product/Service</option>'+product_list+'</select><input type="text" placeholder="quantity" name="quantity[]" id="quantity"><input type="text" placeholder="Amount" name="amount[]" id="PramountName"><label class="txt">Taxable</label><label class="switch"><input type="checkbox" value="1" name="taxable[]"><span class="slider round"></span></label><a href="javascript:void(0);" class="remove_product"><img src="Media/rm.png" width="30px" height="30px"/></a></div>'; 
     //New input field html
+
     //Quantity
-    $('input.quantity').on('change keyup',function()
-    {
+    $('input.quantity').on('change keyup',function(){
         var qty = $('.quantity').val;
-        var prc = $(this).find('.')
         var amt = $('.Amount').val;
         
         var subtotal    =   amt;
         $('#subtotal').val(subtotal);
+
           $total.val($qty.val()*($price.val()-($price.val()*($discount.val()/100))));
+          
           var grandTotal=0;
           $('table').find('input.expensess_sum').each(function(){
               if(!isNaN($(this).val()))
@@ -96,6 +97,7 @@ $link = $_SESSION['connection'];
              grandTotal =0;
           $grand_total.val(grandTotal)
     });//end in Quantity
+
 });
 </script>
 
