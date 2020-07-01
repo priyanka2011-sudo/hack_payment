@@ -53,15 +53,13 @@ $link = $_SESSION['connection'];
     var add_product = $('.add_inv_item'); //Add button selector
     var wrapper = $('.extra_inv_item'); //Input field wrapper
     var x = 1; //Initial counter
-    
-    
+        
     //Once add product is clicked
     $(add_product).click(function(){
        
             $(wrapper).append(newRow); //Add new Row
             x++; //Increment counter
             $('.total_rows').val(x);
-
     });
     
     //Once remove product is clicked
@@ -76,28 +74,28 @@ $link = $_SESSION['connection'];
 
     var newRow = '<div><select id="products" name="productname[]"><option>Product/Service</option>'+product_list+'</select><input type="text" placeholder="quantity" name="quantity[]" id="quantity"><input type="text" placeholder="Amount" name="amount[]" id="PramountName"><label class="txt">Taxable</label><label class="switch"><input type="checkbox" value="1" name="taxable[]"><span class="slider round"></span></label><a href="javascript:void(0);" class="remove_product"><img src="Media/rm.png" width="30px" height="30px"/></a></div>'; 
     //New input field html
-
     //Quantity
-    $('input.quantity').on('change keyup',function(){
-        var qty = $('.quantity').val;
-        var amt = $('.Amount').val;
-        
-        var subtotal    =   amt;
-        $('#subtotal').val(subtotal);
+    $(document).ready(function(){
 
-          $total.val($qty.val()*($price.val()-($price.val()*($discount.val()/100))));
-          
-          var grandTotal=0;
-          $('table').find('input.expensess_sum').each(function(){
-              if(!isNaN($(this).val()))
-                {grandTotal += parseInt($(this).val()); 
-                }
-          });
-          if(isNaN(grandTotal))
-             grandTotal =0;
-          $grand_total.val(grandTotal)
-    });//end in Quantity
+update_amounts();
+$('.qty').change(function() {
+    update_amounts();
+});
+});
 
+function update_amounts()
+{
+var sum = 0.0;
+$('#myTable > tbody  > tr').each(function() {
+    var qty = $(this).find('option:selected').val();
+    var price = $(this).find('.price').val();
+    var tax = $(this).find('.ttxt').val();
+    var amount = ((qty*price) * tax) + (qty*price);
+    sum+=amount;
+    $(this).find('.amount').text(''+amount);
+});
+//just update the total to sum    
+}
 });
 </script>
 
