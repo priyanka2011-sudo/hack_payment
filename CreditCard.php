@@ -1,8 +1,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS/CustomerList2.css">
-    <link rel="stylesheet" type="text/css" href="CSS/CustomerRegisteration.css">
-    <link rel="stylesheet" type="text/css" href="CSS/mycss.css">
+    <!-- <link rel="stylesheet" type="text/css" href="CSS/CustomerRegisteration.css">
+    <link rel="stylesheet" type="text/css" href="CSS/mycss.css"> -->
     <script src="JS/CustomerList.js"></script>
     <script src="JS/invoiceinitiation.js"></script>
     <script src="JS/registration.js"></script>
@@ -25,8 +25,9 @@
         </nav> action="https://integratepayments.transactiongateway.com/api/query.php" -->
     </div>
     <section id="main_container">
+    <img src="Media/credit_card.png" id="card_imgs" alt="card images"> <br><br>
         <form id="card_info" method="POST" onsubmit="return validate();" action="https://integratepayments.transactiongateway.com/api/query.php"> 
-            <img src="Media/credit_card.png" id="card_imgs" alt="card images"> <br><br>
+            
             <label>Card number:</label>
             <input type="number" id="card_num" maxlength="20"> <label id="card_num_err"></label> <br>
             <label>Expiration day:</label>
