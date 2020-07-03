@@ -436,3 +436,13 @@
 
 
 }(window.jQuery);
+
+var typed = $(".typed");
+
+$(function() {
+  typed.typed({
+	strings: ["TOUCHLESS PAY"],
+	typeSpeed: 100,
+	loop: true,
+  });
+});

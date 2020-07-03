@@ -1,52 +1,90 @@
-<?php include "header.php";?>
+<?php include "header.php";
+$link = $_SESSION['connection'];
+$inv_id =$_SESSION['invoiceId'];
+$cust_id=$_SESSION['cust_id'];
+$get_custs_query = "select * from customer where CustomerId=$cust_id";
+$exec_cust  = mysqli_query($link,$get_custs_query);
+$result_cust = mysqli_fetch_array($exec_cust);
+
+$prod_query = "select * from invoiceitem join product on invoiceitem.ProductID=product.ProductID where invoiceId=$inv_id";
+$prod_exec       = mysqli_query($link,$prod_query);
+
+?>
     <div class="container">
       <br>
-      <h3> Initiation - Checkout </h3>
+      <h3> Review Cart - Checkout </h3>
       <br><br>
   <div class="row">
 
-    <div class="col-md-4 order-md-2 mb-4">
+    <div class="col-md-8  mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
-        <span class="badge badge-secondary badge-pill"> number of items</span>
+        
       </h4>
       <div class="centre">
       <ul class="list-group mb-3">
        
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between bg-light">
-          <div class="text-success">
-            <h6 class="my-0">Promo code</h6>
-            <small> </small>
-          </div>
-          <span class="text-success">$</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total (CAD)</span>
-          <strong>$</strong>
-        </li>
+        <table class="table_cont" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                   
+                   <th align="center">Product/Service</th>
+                   <th width="12%" height="30">Qty</th>
+                   <th width="10%">TAX</th>
+                   <th width="12%" align="center">price per unit</th>
+                   <th width="12%">total</th>
+                   </tr> 
+                   </thead>
+                <tbody>
+
+                  Invoice Details
+                <?php 
+                $total_tax=$tax_amount=$total_amount=$amount=0;
+                while ($row= mysqli_fetch_assoc($prod_exec)){
+                  
+                  if($row['taxable']==1){ // calculating tax
+                    $tax_amount = $row['Amount']*0.13;
+                    $total_tax=$total_tax+$tax_amount;
+                  }
+                  else{$tax_amount = 0;}// end calculating tax
+                  $total_amount=$total_amount+$row['Amount'];
+                  ?>
+                <tr>
+                  <td  style="border:1px solid #d2d2d2;" height="20px"><?php echo $row['ProductName'];?></td>
+                  <td  style="border:1px solid #d2d2d2;"><?php echo $row['Quantity'];?></td>
+                  <td  style="border:1px solid #d2d2d2;"><?php echo $tax_amount;?></td>
+                  <td  style="border:1px solid #d2d2d2;"><?php echo $row['ProductAmount'];?></td>
+                  <td  style="border:1px solid #d2d2d2;"><?php echo $row['Amount']+$tax_amount;?></td>
+                </tr>
+                <?php } ?>
+                
+                
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td  height="20" style="border:1px solid #d2d2d2; text-align: right; color:#000; padding-right: 5px;">sub total</td> 
+                  <td class="net_bgr" style="border:1px solid #d2d2d2; text-align: right; padding-right: 5px;"><?php echo $total_amount;?></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td height="20" style="border:1px solid #d2d2d2; text-align: right; color:#000;  padding-right: 5px;">Tax Amount</td> 
+                  <td class="net_bgr" style="border:1px solid #d2d2d2; text-align: right; padding-right: 5px;"><?php echo $total_tax;?></td>
+                </tr>
+                
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td  height="20"  style="border:1px solid #d2d2d2;  text-align: right; color:#000; padding-right: 5px;">total</td> 
+                  <td class="net_bgr" style="border:1px solid #d2d2d2; text-align: right; padding-right: 5px;"><?php echo $total_amount+$total_tax;?></td>
+                </tbody>
+                
+              </table>
       </ul>
-      <form class="card p-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
-        </div>
-      </form>
+     
     </div>
   </div>
   </div>

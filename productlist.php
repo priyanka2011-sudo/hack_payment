@@ -48,19 +48,14 @@ $exec_prod  = mysqli_query($link,$get_prod_query);
       <button id="searchbtn" class="btn btn-outline-success" type="submit">Search</button>
     </form>
     <br>
-        <a href="ProductRegistration.html">
+        <a href="ProductRegistration.php">
    
           <div class="row">
             <div class="col-md-4 col-lg-2">
               <button class="btn btn-primary  btn-block">Register</button>
             </div><!-- /col -->
           </div><!-- /row --></a>
-          <br>
-          <div class="row">
-            <div class="col-md-4 col-lg-2">
-              <button class="btn btn-primary  btn-block">Scan Barcode</button>
-            </div><!-- /col -->
-          </div><!-- /row -->
+         
           <br>      
     </section>
   

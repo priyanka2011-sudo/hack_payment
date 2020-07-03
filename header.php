@@ -15,7 +15,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
     <script src="js/prregistration.js"></script>
+
     <script src="JS/CreditCard.js"></script>
+    <script src="js/typed.js"></script>
+
   </head>
 <body>
 
@@ -30,10 +33,13 @@
         <a class="nav-link" href="home.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="productlist.html">Product List</a>
+        <a class="nav-link" href="productlist.php">Product List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="CustomerList2.html">Customer List</a>
+        <a class="nav-link" href="productlist.php">Invoice List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="CustomerList.php">Customer List</a>
       </li>
     </ul>
   
