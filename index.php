@@ -1,3 +1,9 @@
+<?php include "config/dbconnect.php";
+error_reporting(0);
+if(!($_SESSION['loginId'])){
+    header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +67,7 @@
                                        </div>
                                 </div>
 
-                                <a href="CustomerList.php"><div class="grid__item">
+                                <a href="customerList.php"><div class="grid__item">
                                     <div class="product">
                                         <div class="tm-nav-link">
                                             <i class="fa fa-address-book fa-3x tm-nav-icon"></i>

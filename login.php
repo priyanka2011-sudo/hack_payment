@@ -3,8 +3,8 @@ include "config/dbconnect.php";
 $link = $_SESSION['connection'];
 error_reporting(0);
 if(isset($_POST)){
-     echo  $UserName   =     isset($_POST['username'])?$_POST['username']:'';
-     echo  $Password   =     isset($_POST['password'])?$_POST['password']:'';
+    $UserName   =     isset($_POST['username'])?$_POST['username']:'';
+     $Password   =     isset($_POST['password'])?$_POST['password']:'';
 
     $check_user       = "select * from login where UserName = '".$UserName."' and Password='".$Password."'";
       $exec_check_user  = mysqli_query($link,$check_user);

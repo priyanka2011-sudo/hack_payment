@@ -1,4 +1,9 @@
-<?php include_once "config/dbconnect.php"?>
+<?php include "config/dbconnect.php";
+error_reporting(0);
+if(!($_SESSION['loginId'])){
+    header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,10 +41,13 @@
         <a class="nav-link" href="productlist.php">Product List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="productlist.php">Invoice List</a>
+        <a class="nav-link" href="invoice.php">Invoice List</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="CustomerList.php">Customer List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout</a>
       </li>
     </ul>
   
