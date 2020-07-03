@@ -1,9 +1,4 @@
-body {
-    margin: 0;
-}
-* {
-    font-size: large;
-}
+
 /* CSS for top_bar */
 #top_bar {
     position: fixed;
@@ -24,30 +19,7 @@ body {
     padding: 5px 0 0 5px;
     height: 80%;
 }
-#nav_bar {
-    float: right;
-    padding: 10px 20px;
-}
-#nav_bar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-#nav_bar ul li {
-    display: inline-block;
-    position: relative;
-    list-style: none;
-}
-#nav_bar a {
-    display: inline-block;
-    padding: 15px;
-    color: black;
-    text-decoration: none;
-}
-#nav_bar li:hover a:hover {
-    color: white;
-    background-color: black;
-}
+
 /* CSS for main_container */
 #main_container {
     padding-top: 100px;
@@ -61,7 +33,6 @@ body {
     border: none;
     border-radius: 5%;
 }
-
 .functional_button:hover {
     opacity: 70%;
 }
@@ -69,9 +40,8 @@ body {
     float: right;
 }
 #scan_barcode {
-    margin: 0 0 0 0px;
+    margin: 60px 0 20px 40px;
 }
-
 .search_by {
     margin: 0 0 20px 40px;
 }
@@ -82,6 +52,7 @@ body {
 }
 .profile_icon {
     height: 80%;
+    margin-right: 100%;
 }
 /* Responsive */
 @media (max-width: 700px) {
@@ -100,10 +71,10 @@ body {
     #menu_toggle {
         display: block;
     }   
+
 }
 /* FOOTER */
 #footer_container {
-    margin-top: 40px;
     border-top: solid black 2px;    
     background-color: #756e6d;
     color: white;
@@ -116,25 +87,20 @@ body {
 #copyright {
     text-align: center;
 }
-/* OTP */
-#otp_container {
-    text-align: center;
+
+#transaction_init,#create_customer {
+    float: left;
+   
 }
-header {
-    font-size: 150%;
-    font-weight: 100;
+.search_by,.searchfrom,.searchto {
+    margin-top: 80px;
 }
-.OTP {
-    width: 50px;
-    text-align: center;
-    margin-right: 5px;
+.searchfrom,.searchto 
+{
+    margin-bottom: 50px;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.todate
+{
+    margin-left: 50px;
 }
-/* Credit Card */
-img#card_imgs {
-    height: 70px;
-}
+  

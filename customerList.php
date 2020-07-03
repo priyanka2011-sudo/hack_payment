@@ -1,27 +1,25 @@
-<?php include "header.php";?>
+<?php include "header.php"?>
 
 <div class="container-fluid">
     <br>
-    <h3>Invoice List </h3>
+    <h3> Customer List </h3>
     <br><br>
        
 <div class="portfolio">
 
     <section id="profile_list">
       <div class="container">
-        <h2>Invoice Information</h2>         
+        <h2>Customer Information</h2>         
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Invoice Number</th>
-              <th>Customer Name</th>
-              <th>Amount</th>
+              <th>Name</th>
+              <th>Phone Number</th>
               <th>Update</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><input type="text"></td>
               <td><input type="text"></td>
               <td><input type="text"></td>
               <td><button type="button" class="btn btn-info"></button></td>
@@ -33,12 +31,11 @@
     <section id="main_container">
           
     <form style="margin-right: 50px;" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search By Invoice#">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Customer">
       <button id="searchbtn" class="btn btn-outline-success" type="submit">Search</button>
     </form>
     <br>
-        <a href="CustomerRegistration.html">
-   
+        <a href="CustomerRegistration.html">   
           <div class="row">
             <div class="col-md-4 col-lg-2">
               <button class="btn btn-primary  btn-block">Register</button>
@@ -56,4 +53,4 @@
 </div>
 <br><br>
 <br><br>
-<?php include "footer.php";?>
+<?php include "footer.php"?>

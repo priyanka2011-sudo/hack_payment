@@ -1,2 +1,0 @@
-ALTER TABLE `invoiceitem` ADD `invoiceId` INT(50) NOT NULL AFTER `InvoiceItemID`;
-

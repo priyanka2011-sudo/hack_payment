@@ -48,9 +48,8 @@ if(isset($_POST['BusinessName'])){
     $DeletedAt              =   NULL;
     $DeletedBy              =   NULL;
 
-
     //upload logo code
-        $target_dir = "media/business_logo/";
+        $target_dir = "img/business_logo/";
         $target_file = $target_dir . basename($_FILES["BusinessLogo"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -140,122 +139,112 @@ if(isset($_POST['BusinessName'])){
 }
 
 ?>
+ <div class="container-fluid">
+    <div class="test">
+    <br>
+    <h3>Business Registration</h3>
 
-
-        <form name="form" action="" onsubmit="return isValid();" method="post" enctype="multipart/form-data">
-            <div class="container">
-
-                <div class='col-25'>
-                <label for="BusinessName"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="Business Name" name="BusinessName" id="BusinessName" value="<?=$BusinessName?>" required>
-                </div>
-
-                
-                <div class='col-25'>
-                <label for="businesstype"></label></div>
-                <div class='col-75'>
-                <select class="btype" placeholder="Business Type" name="BusinessTypeID" id="BusinessTypeID">
-                    <?php echo $bus_type_option;?>
-                </div> </select>
-
-                <div class='col-25'>
-                <label for="phonenum"></label></div>
-                <div class='col-75'>
-                <input type="tel" placeholder="Phone Number" name="BusinessPhone" id="phonenum" value="<?=$BusinessPhone?>" pattern=".{10,}" title="Phone Number cannot be less than 10 digits"oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="address"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="Address 1" name="BusinessAddressLine1" id="address" value="<?=$BusinessAddressLine1?>" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="address"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="Address 2" name="BusinessAddressLine2" id="address" value="<?=$BusinessAddressLine2?>" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="city"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="City" name="BusinessCity" id="city" value="<?=$BusinessCity?>" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="country"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="Country" name="BusinessCountry" value="<?=$BusinessCountry?>" id="country" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="province"></label></div>
-                <div class='col-75'>
-                <select class="prov" name="BusinessProvince">
-                <optgroup label="Provinces">
-                    <option value="1" selected="selected"> Ontario </option>
-                    <option value="2"> British Columbia </option>
-                    <option value="3"> Alberta </option>
-                    <option value="4"> Saskatchewan </option>
-                    <option value="5"> Manitoba </option>
-                    <option value="6"> Quebec </option>
-                    <option value="7"> Ontario </option>
-                    <option value="8"> Nova Scotia </option>
-                    <option value="10"> Prince Edward Island </option>
-                    <option value="11"> New Brunswick </option>
-                    <option value="9"> Newfoundland and Labrador </option>
-                </optgroup>
-                <optgroup label="Territories">
-                    <option value="11"> North West</option>
-                    <option value="12"> Yukon </option>
-                    <option value="13"> Nunavut </option>
-                </optgroup>
-                </select>
-
-                <div class='col-25'>
-                <label for="postalcode"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="Postal Code" name="BusinessPostalCode" value="<?=$BusinessPostalCode?>" id="postalcode" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" title="A1A 1A1" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="BusinessRegNo"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="BusinessRegNo" name="BusinessRegNo" value="<?=$BusinessRegNo?>" id="BusinessRegNo" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="TaxRegNo"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="TaxRegNo" name="TaxRegNo" value="<?=$TaxRegNo?>" id="TaxRegNo" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="TaxPercent"></label></div>
-                <div class='col-75'>
-                <input type="text" placeholder="TaxPercent" name="TaxPercent" value="<?=$TaxPercent?>" id="TaxPercent" required>
-                </div>
-
-                <div class='col-25'>
-                <label for="BusinessLogo"></label></div>
-                <img class ="resize" src="Media\business_logo/logo.png"  alt="LOGO">
-                <div class='col-50'>
-                <input type="file" placeholder="BusinessLogo" name="BusinessLogo" id="BusinessLogo" required>
-                </div>
-                <div class='col-25'>
-                <img src="<?=$BusinessLogo?>"/>
-                </div>
-
-                </div>
-                <hr>
-                <input type="submit" value="Submit"></input>
-            </div>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+            
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"><h6>Business Name</h6></label>
+            <input type="text" class="form-control" id="inputEmail4" name="BusinessName" placeholder="Business Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"><h6>Business Type</h6></label>
+            <select id="inputState" class="form-control" name="BusinessTypeID">
+              <option selected>Choose...</option>
+              <?php echo $bus_type_option;?>
+            </select>
+          </div>
         </div>
-            </form>
-<?php include "footer.php"; ?>
+        
+        <div class="form-group">
+            <label for="inputAddress"><h6>Phone Number</h6></label>
+            <input class="form-control" type="tel" placeholder="Phone Number" value="<?=$BusinessPhone?>" name="BusinessPhone" id="example-tel-input">
+          </div>
 
+        <div class="form-group">
+          <label for="inputAddress"><h6>Address</h6></label>
+          <input type="text" class="form-control" id="inputAddress" value="<?=$BusinessAddressLine1?>" name="BusinessAddressLine1" placeholder="1234 Main St">
+        </div>
 
+        <div class="form-group">
+          <label for="inputAddress2"><h6>Address 2</h6></label>
+          <input type="text" class="form-control" id="inputAddress2" value="<?=$BusinessAddressLine2?>" name="BusinessAddressLine2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity"><h6>City</h6></label>
+            <input type="text" class="form-control" id="inputCity" value="<?=$BusinessCity?>" name="BusinessCity" placeholder="City">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputState"><h6>Province</h6></label>
+            <select id="inputState" name="BusinessProvince" class="form-control">
+              <option selected>Choose...</option>
+              <optgroup label="Provinces">
+                <option value="1"> Ontario </option>
+                <option value="2"> British Columbia </option>
+                <option value="3"> Alberta </option>
+                <option value="4"> Saskatchewan </option>
+                <option value="5"> Manitoba </option>
+                <option value="6"> Quebec </option>
+                <option value="7"> Ontario </option>
+                <option value="8"> Nova Scotia </option>
+                <option value="10"> Prince Edward Island </option>
+                <option value="11"> New Brunswick </option>
+                <option value="9"> Newfoundland and Labrador </option> 
+            </optgroup> 
+              <optgroup label="Territories">                                  
+                <option value="11"> North West</option>
+                <option value="12"> Yukon </option>
+                <option value="13"> Nunavut </option>
+            </optgroup> 
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip"><h6>Postal-Code</h6></label>
+            <input type="text" class="form-control" id="inputZip" value="<?=$BusinessPostalCode?>" name="BusinessPostalCode" placeholder="Postal Code">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip"><h6>Country</h6></label>
+            <input type="text" class="form-control" id="inputZip" value="<?=$BusinessCountry?>" name="  BusinessCountry" placeholder="Country">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"><h6>Business Reg No</h6></label>
+            <input type="text" class="form-control" id="inputEmail4" value="<?=$BusinessRegNo?>" name="BusinessRegNo" placeholder="Business Reg No">
+          </div>
 
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"><h6>Tax RegNo</h6></label>
+            <input type="text" class="form-control" id="inputEmail4" value="<?=$TaxRegNo?>" name="TaxRegNo" placeholder="Tax Reg No">
+          </div>
 
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"><h6>Tax Percent</h6></label>
+            <input type="text" class="form-control" value="<?=$TaxPercent?>" id="inputEmail4" name="TaxPercent" placeholder="Tax Percent">
+          </div>
 
+          <div class="form-group col-md-3">
+            <label for="inputEmail4"><h6>Business Logo</h6></label>
+            
+            <input type="file" class="form-control" placeholder="BusinessLogo" name="BusinessLogo" id="BusinessLogo" >
+          </div>
+
+          <div class="form-group col-md-3">
+            <img class ="resize" src="<?=$BusinessLogo?>"  alt="LOGO">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-2">
+              <button class="btn btn-primary active  btn-block">Submit</button>
+            </div><!-- /col -->
+          </div><!-- /row -->
+      </form>
+      <br>
+  </div>
+</div>
+<?php include "footer.php";?> 

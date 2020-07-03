@@ -9,7 +9,7 @@ if(isset($_POST['name'])){
     $CustomerPhone          =   isset($_POST['phonenum'])?$_POST['phonenum']:'';
     $CustomerEmailID        =   isset($_POST['email'])?$_POST['email']:'';
     $CreatedAt              =   date("Y-m-d h:i:s");
-    $CreatedBy              =   isset($_SESSION['loginId']);
+    $CreatedBy              =   isset($_SESSION['loginId'])?$_SESSION['loginId']):'';
     $UpdatedAt              =   NULL;
     $UpdatedBy              =   NULL;
     $DeletedAt              =   NULL;
@@ -36,39 +36,40 @@ if(isset($_POST['name'])){
             echo mysqli_error($link);
     }
 }
-
-
 ?>
 
-        <form name="form" action="" onsubmit="return isValid();" method="post">            
-            <div class="container">
-              
-                <div class='col-25'>
-                <label for="name"></label></div> 
-                <div class='col-75'>
-                <input type="text" placeholder="Name" name="name" id="name" required>
-            </div> 
-
-                <div class='col-25'>
-                <label for="phonenum"></label></div> 
-                <div class='col-75'>
-                <input type="tel" placeholder="Phone Number" name="phonenum" id="phonenum" pattern=".{10,}" title="Phone Number cannot be less than 10 digits"oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>
-            </div> 
-
-                <div class='col-25'>
-                <label for="email"></label> </div> 
-                <div class='col-75'>
-                <input type="email" placeholder="Email" name="email" id="email" required>
-            </div> 
-
-                <hr>                           
-                <input type="submit" value="Submit"></input>
-            </div> 
-        </div> 
-              
-            </form>
-<?php include "footer.php"; ?>
-
-
-
-
+<div class="container-fluid">
+    <div class="container">
+        <br>
+        <h3>Customer Registration</h3>
+        <form action="" method="post">
+             
+            <div class="input-group">
+                <span class="input-group-addon"></span>
+                <input id="name"  type="text" class="form-control" name="name" placeholder="Name">
+              </div>         
+    
+                <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input class="form-control" type="tel" name="phonenum" placeholder="Phone Number" id="example-tel-input">
+                </div>
+    
+            <div class="input-group">
+                <span class="input-group-addon"></span>
+                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            </div>  
+    
+          <br>
+          <div class="row">
+            <div class="col-md-4 col-lg-2">
+              <button class="btn btn-primary  btn-block">Submit</button>
+            </div><!-- /col -->
+          </div><!-- /row -->
+        </form>
+    
+    
+        <br>
+    
+      </div>
+</div>
+<?php include "footer.php";?>

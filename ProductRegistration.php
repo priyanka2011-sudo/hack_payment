@@ -8,10 +8,9 @@ if(isset($_POST)){
      $ProductAmount = $_POST['amount'];
      $Taxable       = $_POST['taxable'];
      $CreatedAt     =   date("Y-m-d h:i:s");
-     $total_rows    = $_POST['total_rows'];
      $BusinessID    = $_SESSION['BusinessID'];
-
-     for($i=0;$i<$total_rows;$i++){
+     
+     for($i=0;$i<sizeof($ProductName);$i++){
         $add_product_query = "INSERT INTO `product`(
                                             `BusinessID`,
                                             `ProductName`,
@@ -35,68 +34,52 @@ if(isset($_POST)){
      }
 }
 ?>
-<script type="text/javascript">
-    $(document).ready(function(){
-    var add_product = $('.add_product'); //Add button selector
-    var wrapper = $('.extra_product'); //Input field wrapper
-    var x = 1; //Initial counter
-    
-    
-    //Once add product is clicked
-    $(add_product).click(function(){
-       
-            $(wrapper).append(newRow); //Add new Row
-            x++; //Increment counter
-            $('.total_rows').val(x);
-    });
-    
-    //Once remove product is clicked
-    $(wrapper).on('click', '.remove_product', function(e){
-        e.preventDefault();
-        $(this).parent('div').remove(); //Remove new row
-        x--; //Decrement counter
-        $('.total_rows').val(x);
-    });
-    
-    var newRow = '<div><input type="text" placeholder="Product Name" name="productname[]" id="PrName"><input type="text" placeholder="Amount" name="amount[]" id="PramountName"><label class="txt">Taxable</label><label class="switch"><input type="checkbox" value="1" name="taxable[]"><span class="slider round"></span></label><a href="javascript:void(0);" class="remove_product"><img src="Media/rm.png" width="30px" height="30px"/></a></div>'; //New input field html
-    
-});
-</script>
-        <form name="form" action="" onsubmit="return isValid();" method="post">            
-        <div class="container">
-              <label for="PrName"><?php if(isset($msg)){echo $msg;}?></label>  
-            <div class='col-75'>
 
-                <label for="PrName"></label>      
-                <input type="text" placeholder="Product Name" name="productname[]" id="PrName">
+<div class="container-fluid">
+    <br>
+    <h3> Product Registration</h3>
+    <br><br>
+      <div class="container-lg">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8"><h2><b></b></h2></div>
+                                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-info add-new-product"><i class="fa fa-plus"></i> Add New</button>
+                          
+                        </div>
+                    </div>
+                </div>
+                <form method="post" action="">
+                    <table class="table table-bordered">
+                        <thead>                
+                            <tr>
+                                <th style="width:240px">Product</th>
+                                <th>Amount</th>            
+                                <th style="width:80px">Taxable</th>
+                                <th>Actions</th>
+                            </thead>
+                            </tr>
+                            <td><input type="text" class="form-control" name="productname[]"></td>                       
+                            <td><input type="text" class="form-control" name="amount[]"></td>   
+                            <td style="text-align: center;"><input type="checkbox" value="1" name="taxable[]"/></td>
+                            <td>
+                                
+                                <a class="delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>                       
+                    </thead>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-4 col-lg-2">
+                          <button class="btn btn-primary  btn-block">Save Product</button>
+                        </div><!-- /col -->
+                    </div><!-- /row -->
+                </form>
 
-                <label for="amount"></label>     
-                <input type="text" placeholder="Amount" name="amount[]" id="PramountName">
-                    
-                <label class="txt">Taxable</label>
-                <label class="switch">
-                    <input type="checkbox" value="1" name="taxable[]">
-                    <span class="slider round"></span>
-                </label> 
+                </div>                
+            </div>                        
+</div>
 
-                <div class="extra_product"></div>
-
-                <label class="btn" >       
-                <button type="button" class="add_product"><img class="icon" src="Media/add.png"></button>
-                </label> 
-            </div>   
-                    
-        </div>                  
-                        
-            <hr>  
-            <input type="hidden" name="total_rows" class="total_rows"/>
-            <div class="con">                         
-            <input type="submit" value="Save Product"></input>    
-            </div> 
-        </form>
-<?php include "footer.php"; ?>
-
-
-
-
-
+<br/><br/>
+<?php include "footer.php";?>
