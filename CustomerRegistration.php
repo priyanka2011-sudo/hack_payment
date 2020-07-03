@@ -9,7 +9,7 @@ if(isset($_POST['name'])){
     $CustomerPhone          =   isset($_POST['phonenum'])?$_POST['phonenum']:'';
     $CustomerEmailID        =   isset($_POST['email'])?$_POST['email']:'';
     $CreatedAt              =   date("Y-m-d h:i:s");
-    $CreatedBy              =   isset($_SESSION['loginId'])?$_SESSION['loginId']):'';
+    $CreatedBy              =   isset($_SESSION['loginId'])?$_SESSION['loginId']:'';
     $UpdatedAt              =   NULL;
     $UpdatedBy              =   NULL;
     $DeletedAt              =   NULL;
@@ -32,8 +32,13 @@ if(isset($_POST['name'])){
 
     $cust_exec       = mysqli_query($link,$cust_insert_query);
 
+
     if(!$cust_exec){
             echo mysqli_error($link);
+    }
+    else{
+        $id=mysqli_insert_id($link);
+        header("location: qrcode/QR_code.php?id=$id");
     }
 }
 ?>

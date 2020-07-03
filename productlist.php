@@ -1,4 +1,11 @@
-<?php include "header.php";?>
+<?php include "header.php";
+$link = $_SESSION['connection'];
+
+$get_prod_query = "select * from product";
+$exec_prod  = mysqli_query($link,$get_prod_query);
+
+
+?>
 <div class="container-fluid">
     <br>
     <h3> Product List </h3>
@@ -10,19 +17,26 @@
       <div class="container">
         <h2>Product Information</h2>         
         <table class="table table-bordered">
-          <thead>
+          <thead style="background:#fff;">
             <tr>
               <th>Name</th>
               <th>Amount</th>
               <th>Update</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><input type="text"></td>
-              <td><input type="text"></td>
-              <td><button type="button" class="btn btn-info"></button></td>
-            </tr>
+          <tbody style="background:#fff;">
+            <?php
+              while ($row=mysqli_fetch_assoc($exec_prod)){
+                ?>
+                <tr>
+                  <td><?php echo $row['ProductName']?></td>
+                  <td><?php echo $row['ProductAmount']?></td>
+                  <td><a href="updateProduct.php?id=<?php echo $row['ProductID']?>"><button type="button" class="btn btn-info">Update</button></a></td>
+                </tr>
+                <?php
+              }
+            ?>
+            
             </tbody>
         </table>
       </div>
