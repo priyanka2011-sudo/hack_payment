@@ -1,8 +1,12 @@
 <?php 
+include("config/dbconnect.php");
+$link = $_SESSION['connection'];
+
     include_once("config/payment_gateway.php");
     
     $ccnum = $_POST['card_num'];
     $expdate= $_POST['ex_day'];
+    $cust_id= $_POST['cust_id'];
     $gw = new gwapi;
     $gw->setLogin("Z6C4u6FwJAAr3B6fcgJ52R8aX3jBzBg4");
     $gw->setBilling("Priyanka","haha","Acme, Inc.","123 Main St","Suite 200", "Beverly Hills",
@@ -16,8 +20,34 @@
 //      print_r($gw->responses['responsetext']);
 //      var_dump($gw->responses['responsetext']);
 //        $response = explode("&", $gw->responses);
-//        print_r($gw->responses);
-//        echo $gw->responses['response'];
+        // print_r($gw->responses);
+//        echo $gw->responses['authcode'];
+
+
+
+if(isset($_POST['name'])){
+
+    
+    $CreatedAt              =   date("Y-m-d h:i:s");
+   
+
+    $cust_insert_query = "INSERT INTO `paymentmethod`(
+                                            `CustomerID`,
+                                            `PayProfileID`,
+                                            `CreatedAt`
+                                    )
+                                    VALUES(
+                                            '$cust_id',
+                                            ".$gw->responses['authcode'].",
+                                            '$CreatedAt'
+                                    )";
+
+    $cust_exec       = mysqli_query($link,$cust_insert_query);
+
+    if(!$cust_exec){
+            echo mysqli_error($link);
+    }
+}
 ?>
 <html>
 <?php include "header.php"?>

@@ -33,7 +33,7 @@ $exec_inv     = mysqli_query($link,$get_inv_query);
                   <td><?php echo $row['InvoiceNumber'];?></td>
                   <td><?php echo $row['CustomerName'];?></td>
                   <td><?php echo $row['InvoiceNumber'];?></td>
-                  <td><a href="ViewInvoice.php?id=<?php echo $row['InvoiceID']?>"><button type="button" class="btn btn-info"></button></a></td>
+                  <td><a href="ViewInvoice.php?id=<?php echo $row['InvoiceID']?>"><button type="button" class="btn btn-info">View</button></a></td>
                 </tr>
                 <?php
               }

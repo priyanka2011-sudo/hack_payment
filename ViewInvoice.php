@@ -108,7 +108,7 @@ $exec_inv     = mysqli_query($link,$get_inv_item);
 		<?php 
 		$total_tax=$tax_amount=$total_amount=$amount=0;
 		while ($row= mysqli_fetch_assoc($exec_inv)){
-			
+
 			if($row['taxable']==1){ // calculating tax
 				$tax_amount = $row['Amount']*0.13;
 				$total_tax=$total_tax+$tax_amount;

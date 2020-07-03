@@ -2,6 +2,7 @@
 $link = $_SESSION['connection'];
 $inv_id =$_SESSION['invoiceId'];
 $cust_id=$_SESSION['cust_id'];
+
 $get_custs_query = "select * from customer where CustomerId=$cust_id";
 $exec_cust  = mysqli_query($link,$get_custs_query);
 $result_cust = mysqli_fetch_array($exec_cust);
@@ -18,12 +19,17 @@ $prod_exec       = mysqli_query($link,$prod_query);
 
     <div class="col-md-8  mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
+           <?php $msg=isset($_GET['msg'])?$_GET['msg']:'';
+                  if($msg=='fail'){?>
+                    <span class="text-muted">Your transaction has been failed. Please try again</span>
+                  <?php }
+                 ?>
         <span class="text-muted">Your cart</span>
-        
+        <span class="text-muted">Customer Name : <?php echo $result_cust['CustomerName'];?></span>
       </h4>
       <div class="centre">
       <ul class="list-group mb-3">
-       
+
         <table class="table_cont" cellspacing="0" width="100%">
                 <thead>
                 <tr>
@@ -91,13 +97,10 @@ $prod_exec       = mysqli_query($link,$prod_query);
 </div>
 
 <div class="next">
-  <button type="button" class="btn btn-success">Checkout</button>
+  <a href="checkout.php"><button type="button" class="btn btn-success">Checkout</button></a>
 </div>
 <br>
 
-<a href="initiation1.html">
-<div class="shop">
-<button type="button" class="btn btn-warning">Continue Shopping</button>
-</div></a>
+
 <br>
 <?php include "footer.php";?>
