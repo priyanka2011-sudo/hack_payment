@@ -1,13 +1,4 @@
 
-  var typed = $(".typed");
-
-  $(function() {
-    typed.typed({
-      strings: ["TOUCHLESS PAY"],
-      typeSpeed: 100,
-      loop: true,
-    });
-  });
 
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
