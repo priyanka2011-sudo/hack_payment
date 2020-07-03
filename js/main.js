@@ -5,11 +5,11 @@ $(document).ready(function(){
 	var actions = $("table td:last-child").html();
 	// Append table with add row form on add new button click
     $(".add-new").click(function(){
-		<?php echo "var product_list='".$product_option."';";?>
+
 		var index = $("table tbody tr:last-child").index();
 		var row = '<tr>' +
 		
-            '<td><select class="btn btn-primary dropdown-toggle" id = "myList"><option> Product/Service Name</option>'+product_list+'</select> </td>' +
+            '<td><select class="btn btn-primary dropdown-toggle" id = "myList"><option> Product/Service Name</option></select> </td>' +
             '<td><input type="text" class="form-control"></td>' +
             '<td><input type="text" class="form-control"></td>' + '   <td style="text-align: center;"><input type="checkbox"/></td>' +
 			'<td>' + actions + '</td>' +
