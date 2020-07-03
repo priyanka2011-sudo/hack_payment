@@ -29,10 +29,13 @@
         <a class="nav-link" href="home.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="productlist.html">Product List</a>
+        <a class="nav-link" href="productlist.php">Product List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="CustomerList2.html">Customer List</a>
+        <a class="nav-link" href="productlist.php">Invoice List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="CustomerList.php">Customer List</a>
       </li>
     </ul>
   

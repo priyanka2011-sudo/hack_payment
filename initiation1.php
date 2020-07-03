@@ -178,7 +178,7 @@ $link = $_SESSION['connection'];
   </div>
 
     </div>    
-    <a href="initiation3.php">
+    <a href="initiation2.php">
     <div class="row">
       <div class="col-md-4 col-lg-2">
         <button class="btn btn-primary  btn-block">Next</button>
